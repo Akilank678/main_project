@@ -1,0 +1,151 @@
+/* responsive.css */
+
+/* --- Global Fixes for Hardcoded Layouts --- */
+
+/* Navigation Flexbox Layout */
+.nav-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 5%;
+  height: auto;
+  min-height: 100px;
+}
+.nav-section img {
+  margin: 0;
+  height: 60px;
+}
+.btn {
+  margin: 0;
+  display: flex;
+  gap: 15px;
+}
+
+/* Center Download Button */
+.why-btn {
+  margin: 30px auto;
+  display: block;
+  width: auto;
+  min-width: 250px;
+}
+
+/* Carousel wrapper fixes */
+.carousel-wrapper, .carousel-wrapper1 {
+  padding: 0 40px; /* Space for arrows */
+}
+
+/* Adjust Testimonials Section */
+.main-section {
+  margin: 40px auto;
+  width: 90%;
+  max-width: 1200px;
+  padding: 50px;
+}
+.main-section2 {
+  width: 100%;
+}
+/* .arrowleft { left: 10px; top: 50%; transform: translateY(-50%); }
+.arrowright { right: 10px; top: 50%; transform: translateY(-50%); } */
+
+/* Adjust Arrows */
+/* .left, .left1 { left: 0; }
+.right, .right1 { right: 0; } */
+
+/* Contact Fixes */
+.contact-info { margin-left: 0; }
+.cont-fm::before { margin-left: 5%; }
+.cont-p { margin-left: 5%; }
+
+
+/* --- Tablet Responsive (Max 992px) --- */
+@media screen and (max-width: 992px) {
+  /* Grid 2 columns for Cards */
+  .cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* 2 Items per Carousel View */
+  .card, .card1 {
+    min-width: calc(100% / 2);
+  }
+
+  /* Testimonial Cards */
+  .reviewcard {
+    flex: 0 0 calc(50% - 10px);
+  }
+}
+
+/* --- Mobile Responsive (Max 768px) --- */
+@media screen and (max-width: 768px) {
+  /* Navigation Stacking */
+  .nav-section {
+    flex-direction: column;
+    padding: 20px 5%;
+    gap: 15px;
+  }
+  .btn {
+    width: 100%;
+    justify-content: center;
+  }
+  .btn1, .btn2 {
+    flex: 1;
+    text-align: center;
+    font-size: 14px;
+    padding: 10px;
+  }
+
+  /* Typography / Flex directions for titles */
+  .prt-txt, .head-industries, .why-banners, .head-brands, .head-star, .cont-fm {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .prt-txt p, .head-industries p, .why-banners p, .head-star p {
+    margin-left: 0;
+    margin-top: 10px;
+  }
+  .cont-fm::before { margin-left: 0; }
+  .cont-p { margin-left: 0; }
+  
+  /* 1 Item per Carousel View */
+  .card, .card1 {
+    min-width: 100%;
+  }
+
+  /* Testimonial Cards */
+  .reviewcard {
+    flex: 0 0 100%;
+  }
+
+  .main-section {
+    padding: 50px 30px;
+  }
+  /* .arrowleft { left: 0; }
+  .arrowright { right: 0; } */
+  
+  /* Form width 100% */
+  input, select, .btn5 {
+    width: 100%;
+  }
+}
+
+/* --- Small Mobile Responsive (Max 480px) --- */
+@media screen and (max-width: 480px) {
+  /* Grid 1 column for Cards */
+  .cards {
+    grid-template-columns: 1fr;
+  }
+  
+  /* Stack nav buttons */
+  .btn {
+    flex-direction: column;
+  }
+  
+  h1 {
+    font-size: 1.8em;
+  }
+
+  /* Reduce carousel padding further */
+  .carousel-wrapper, .carousel-wrapper1 {
+    padding: 0 20px;
+  }
+}
