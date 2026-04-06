@@ -1,151 +1,286 @@
 /* responsive.css */
 
-/* --- Global Fixes for Hardcoded Layouts --- */
+/* --- 1. Global Resets & Fluid Setup --- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+@media screen and (max-width: 786px) {
+  .icon img{
+   margin-left: 110px;
+  }
+}
+@media screen and (max-width: 450px) {
+   .icon img{
+   margin-left: 140px;
+  }
+}
 
-/* Navigation Flexbox Layout */
+html,
+body {
+  overflow-x: hidden;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  /* removes inline image spacing bugs */
+}
+
+h1,
+h2,
+h3,
+h4,
+p {
+  overflow-wrap: break-word;
+}
+
+/* Global Fixes for Bad Hardcoded Alignments (Desktops included) */
 .nav-section {
-  display: flex;
+  display: flex !important;
   justify-content: space-between;
   align-items: center;
   padding: 0 5%;
   height: auto;
   min-height: 100px;
 }
+
 .nav-section img {
-  margin: 0;
-  height: 60px;
+  margin: 0 !important;
+  height: 60px !important;
+  width: auto !important;
 }
+
 .btn {
-  margin: 0;
-  display: flex;
+  margin: 0 !important;
+  display: flex !important;
   gap: 15px;
 }
 
-/* Center Download Button */
 .why-btn {
-  margin: 30px auto;
-  display: block;
-  width: auto;
+  margin: 30px auto !important;
+  display: block !important;
+  width: auto !important;
   min-width: 250px;
 }
 
-/* Carousel wrapper fixes */
-.carousel-wrapper, .carousel-wrapper1 {
-  padding: 0 40px; /* Space for arrows */
+.carousel-wrapper,
+.carousel-wrapper1 {
+  padding: 0 60px;
+  /* Space for arrows */
 }
 
-/* Adjust Testimonials Section */
 .main-section {
-  margin: 40px auto;
-  width: 90%;
   max-width: 1200px;
+  width: 90%;
+  margin: 40px auto;
   padding: 50px;
 }
-.main-section2 {
-  width: 100%;
+
+.contact-info {
+  margin-left: 0 !important;
 }
-/* .arrowleft { left: 10px; top: 50%; transform: translateY(-50%); }
-.arrowright { right: 10px; top: 50%; transform: translateY(-50%); } */
 
-/* Adjust Arrows */
-/* .left, .left1 { left: 0; }
-.right, .right1 { right: 0; } */
+.cont-fm::before {
+  margin-left: 5% !important;
+}
 
-/* Contact Fixes */
-.contact-info { margin-left: 0; }
-.cont-fm::before { margin-left: 5%; }
-.cont-p { margin-left: 5%; }
+.cont-p {
+  margin-left: 5% !important;
+}
 
+.prt-txt {
+  margin-top: 20px !important;
+}
 
-/* --- Tablet Responsive (Max 992px) --- */
-@media screen and (max-width: 992px) {
-  /* Grid 2 columns for Cards */
+/* Floating WhatsApp Fix */
+.whatsapp-float {
+  position: fixed !important;
+  right: 20px !important;
+  bottom: 20px !important;
+  width: 60px !important;
+  height: 60px !important;
+  background-color: #25D366 !important;
+  color: white !important;
+  border-radius: 50% !important;
+  display: flex !important;
+  justify-content: center;
+  align-items: center;
+  font-size: 35px !important;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  z-index: 1000;
+  text-decoration: none;
+}
+
+.whatsapp-float .fa-brands {
+  margin: 0 !important;
+  padding: 0 !important;
+  position: static !important;
+  width: auto !important;
+  height: auto !important;
+  color: #fff !important;
+  font-size: 35px !important;
+}
+
+/* --- 2. Laptops (Max 1024px) --- */
+@media screen and (max-width: 1024px) {
   .cards {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  /* 2 Items per Carousel View */
-  .card, .card1 {
-    min-width: calc(100% / 2);
-  }
-
-  /* Testimonial Cards */
-  .reviewcard {
-    flex: 0 0 calc(50% - 10px);
+    grid-template-columns: repeat(3, 1fr) !important;
   }
 }
 
-/* --- Mobile Responsive (Max 768px) --- */
+/* --- 3. Tablets (Max 768px) --- */
 @media screen and (max-width: 768px) {
-  /* Navigation Stacking */
   .nav-section {
-    flex-direction: column;
-    padding: 20px 5%;
-    gap: 15px;
-  }
-  .btn {
-    width: 100%;
-    justify-content: center;
-  }
-  .btn1, .btn2 {
-    flex: 1;
-    text-align: center;
-    font-size: 14px;
-    padding: 10px;
+    padding: 15px 5%;
   }
 
-  /* Typography / Flex directions for titles */
-  .prt-txt, .head-industries, .why-banners, .head-brands, .head-star, .cont-fm {
+  /* Layout adjustments */
+  .cards {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+
+  /* Flex direction adjustments for headings */
+  .prt-txt,
+  .head-industries,
+  .why-banners,
+  .head-brands,
+  .head-star,
+  .cont-fm {
     flex-direction: column;
     align-items: flex-start;
   }
-  .prt-txt p, .head-industries p, .why-banners p, .head-star p {
-    margin-left: 0;
+
+  .prt-txt p,
+  .head-industries p,
+  .why-banners p,
+  .head-star p {
+    margin-left: 0 !important;
     margin-top: 10px;
   }
-  .cont-fm::before { margin-left: 0; }
-  .cont-p { margin-left: 0; }
-  
-  /* 1 Item per Carousel View */
-  .card, .card1 {
-    min-width: 100%;
+
+  .cont-fm::before {
+    margin-left: 0 !important;
   }
 
-  /* Testimonial Cards */
-  .reviewcard {
-    flex: 0 0 100%;
+  .cont-p {
+    margin-left: 0 !important;
   }
 
-  .main-section {
-    padding: 50px 30px;
+  /* Forms */
+  .contact1 {
+    flex-direction: column;
   }
-  /* .arrowleft { left: 0; }
-  .arrowright { right: 0; } */
-  
-  /* Form width 100% */
-  input, select, .btn5 {
-    width: 100%;
+
+  input,
+  select,
+  .btn5 {
+    width: 100% !important;
   }
 }
 
-/* --- Small Mobile Responsive (Max 480px) --- */
+/* --- 4. Mobile (Max 480px) --- */
 @media screen and (max-width: 480px) {
-  /* Grid 1 column for Cards */
-  .cards {
-    grid-template-columns: 1fr;
-  }
-  
-  /* Stack nav buttons */
-  .btn {
-    flex-direction: column;
-  }
-  
-  h1 {
-    font-size: 1.8em;
+
+  /* Navigation */
+  .nav-section {
+    flex-direction: column !important;
+    gap: 15px;
+    padding-bottom: 20px;
   }
 
-  /* Reduce carousel padding further */
-  .carousel-wrapper, .carousel-wrapper1 {
-    padding: 0 20px;
+  .btn {
+    width: 100%;
+    justify-content: center;
+    flex-direction: column !important;
+  }
+
+  .btn1,
+  .btn2 {
+    width: 100%;
+    margin: 0;
+  }
+
+  .cards {
+    grid-template-columns: 1fr !important;
+  }
+
+  h1 {
+    font-size: 1.8rem !important;
+  }
+
+  .prt-txt::before,
+  .head-brands::before,
+  .head-industries::before,
+  .why-banners::before,
+  .head-star::before,
+  .cont-fm::before {
+    margin-left: 0 !important;
+  }
+
+  /* Responsive Carousels: Step-by-step with Arrows consistently visible and perfectly sized inside padding */
+  .carousel-wrapper,
+  .carousel-wrapper1 {
+    padding: 0 40px !important;
+    /* Proper internal spacing reserved for arrows */
+  }
+
+  .main-section {
+    padding: 30px 40px !important;
+    /* Space reserved for arrows */
+  }
+
+  /* Position arrows efficiently overlaying sides natively */
+  .arrow,
+  .arrowright,
+  .arrowleft,
+  #prev,
+  #next,
+  #prev1,
+  #next1,
+  #previmg,
+  #nextimg {
+    display: flex !important;
+    /* Show the arrows globally on phones */
+    width: 38px !important;
+    height: 38px !important;
+    font-size: 18px !important;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50% !important;
+    z-index: 10 !important;
+    top: 50% !important;
+    transform: translateY(-50%) !important;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3) !important;
+    padding: 0 !important;
+    position: absolute !important;
+    background: #fff !important;
+    color: #333 !important;
+  }
+
+  .left,
+  .left1,
+  #previmg {
+    left: 2px !important;
+  }
+
+  .right,
+  .right1,
+  #nextimg {
+    right: 2px !important;
+  }
+
+  /* 1 item exactly per view constraint in the Track */
+  .card,
+  .card1,
+  .ab1,
+  .reviewcard {
+    flex: 0 0 100% !important;
+    min-width: 100% !important;
   }
 }
