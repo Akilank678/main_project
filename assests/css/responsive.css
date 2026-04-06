@@ -1,35 +1,19 @@
-/* responsive.css */
 
-/* --- 1. Global Resets & Fluid Setup --- */
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
+/*  */
+body{
+  margin: 30px;
 }
 @media screen and (max-width: 786px) {
   .icon img{
    margin-left: 110px;
   }
+  
 }
 @media screen and (max-width: 450px) {
    .icon img{
-   margin-left: 140px;
+   margin-left: 10px;
   }
-}
-
-html,
-body {
-  overflow-x: hidden;
-  width: 100%;
-  margin: 0;
-  padding: 0;
-}
-
-img {
-  max-width: 100%;
-  height: auto;
-  display: block;
-  /* removes inline image spacing bugs */
+  
 }
 
 h1,
@@ -40,7 +24,6 @@ p {
   overflow-wrap: break-word;
 }
 
-/* Global Fixes for Bad Hardcoded Alignments (Desktops included) */
 .nav-section {
   display: flex !important;
   justify-content: space-between;
@@ -72,7 +55,6 @@ p {
 .carousel-wrapper,
 .carousel-wrapper1 {
   padding: 0 60px;
-  /* Space for arrows */
 }
 
 .main-section {
@@ -97,8 +79,6 @@ p {
 .prt-txt {
   margin-top: 20px !important;
 }
-
-/* Floating WhatsApp Fix */
 .whatsapp-float {
   position: fixed !important;
   right: 20px !important;
@@ -127,25 +107,19 @@ p {
   font-size: 35px !important;
 }
 
-/* --- 2. Laptops (Max 1024px) --- */
 @media screen and (max-width: 1024px) {
   .cards {
     grid-template-columns: repeat(3, 1fr) !important;
   }
 }
-
-/* --- 3. Tablets (Max 768px) --- */
 @media screen and (max-width: 768px) {
   .nav-section {
     padding: 15px 5%;
   }
 
-  /* Layout adjustments */
   .cards {
     grid-template-columns: repeat(2, 1fr) !important;
   }
-
-  /* Flex direction adjustments for headings */
   .prt-txt,
   .head-industries,
   .why-banners,
@@ -171,8 +145,6 @@ p {
   .cont-p {
     margin-left: 0 !important;
   }
-
-  /* Forms */
   .contact1 {
     flex-direction: column;
   }
@@ -184,10 +156,8 @@ p {
   }
 }
 
-/* --- 4. Mobile (Max 480px) --- */
 @media screen and (max-width: 480px) {
 
-  /* Navigation */
   .nav-section {
     flex-direction: column !important;
     gap: 15px;
@@ -223,19 +193,14 @@ p {
     margin-left: 0 !important;
   }
 
-  /* Responsive Carousels: Step-by-step with Arrows consistently visible and perfectly sized inside padding */
   .carousel-wrapper,
   .carousel-wrapper1 {
     padding: 0 40px !important;
-    /* Proper internal spacing reserved for arrows */
   }
 
   .main-section {
     padding: 30px 40px !important;
-    /* Space reserved for arrows */
   }
-
-  /* Position arrows efficiently overlaying sides natively */
   .arrow,
   .arrowright,
   .arrowleft,
@@ -246,7 +211,6 @@ p {
   #previmg,
   #nextimg {
     display: flex !important;
-    /* Show the arrows globally on phones */
     width: 38px !important;
     height: 38px !important;
     font-size: 18px !important;
@@ -275,7 +239,6 @@ p {
     right: 2px !important;
   }
 
-  /* 1 item exactly per view constraint in the Track */
   .card,
   .card1,
   .ab1,

@@ -1,7 +1,9 @@
 body {
   margin: 10px;
 }
-
+.hero-banner img{
+  margin-bottom: 20px;
+}
 .nav-section {
   margin-top: -10px;
   position: sticky;
@@ -115,9 +117,9 @@ body {
 }
 
 .icon img {
-  width: 70px;
-  height: 70px;
-  margin-left: 90px;
+  width: 50px;
+  height: 50px;
+  margin-left: 0px;
   border: 2px solid red;
   border-radius: 100px;
   padding: 10px;
@@ -181,15 +183,6 @@ body {
   pointer-events: none;
 }
 
-/* .brands::before {
-    left: 0;
-    background: linear-gradient(to right, #fff, transparent);
-}
-
-.brands::after {
-    right: 0;
-    background: linear-gradient(to left, #fff, transparent);
-} */
 @keyframes scroll {
   from {
     transform: translateX(0);
@@ -375,7 +368,6 @@ body {
 }
 
 .card {
-  /* min-width: calc(100% / 3); */
   box-sizing: border-box;
   padding: 10px;
   text-align: center;
