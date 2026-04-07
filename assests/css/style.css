@@ -251,7 +251,10 @@ body {
 .card:hover {
   transform: scale(1.05);
 }
-
+.card h1,h4{
+  margin-top: -20px;
+  margin-bottom: 30px;
+}
 .arrow {
   position: absolute;
   background-color: white;
